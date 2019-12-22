@@ -2,7 +2,7 @@ version: 0.2
 
 env:
     variables:
-        S3_BUCKET: "codepipeline-ap-south-1-681904092053"
+        S3_BUCKET: "blogit-app-s3"
         APP_NAME: "blogify-app"
         BUILD_ENV : "dev"
 
