@@ -1,0 +1,65 @@
+.header-setion
+{
+    .header-content
+    {
+       
+        .header-img-section 
+        {
+            img
+            {
+                height:79px;
+            }
+            
+        }
+        .app-menu
+        {
+
+            .app-menu-content 
+            {
+                .login-button
+                {
+                    border-radius: 4px;
+                    border: 2px solid rgb(216, 211, 211);
+                    .login-button-label
+                    {
+                        font-weight: 600;
+                    }
+                    &:hover{
+                        border: 2px solid rgb(46, 44, 44);
+                        
+                    }
+                }
+                
+                .signup-button
+                {
+                    border-radius: 4px; 
+                    background-color:#fd8469;
+                    .button-signUp
+                    {
+                        .button-label
+                        {
+                            color:white;
+                            font-weight: 600;
+                            
+                        }
+                        &:focus
+                        {
+                            
+                            box-shadow: 0px 0px;
+                        }
+                       
+                    }
+                    &:hover
+                    {
+                        background-color:#f1543f;
+                    }
+                    
+                    // border:2px solid gray;
+                }
+            }
+        }
+    }
+   
+   
+    
+}
