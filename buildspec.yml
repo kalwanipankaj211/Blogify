@@ -31,4 +31,4 @@ artifacts:
     files:
         - './**/*'
     discard-paths: no
-    base-directory: 'dist/bloggit'
+    base-directory: 'dist/blogify-app'
