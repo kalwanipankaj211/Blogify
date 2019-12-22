@@ -1,0 +1,34 @@
+version: 0.2
+
+env:
+    variables:
+        S3_BUCKET: "codepipeline-ap-south-1-681904092053"
+        APP_NAME: "Bloggit"
+        BUILD_ENV : "dev"
+
+phases:
+    install:
+        commands:
+        - echo Installing source NPM dependencies...
+        - npm install
+        - npm install -g @angular/cli
+
+build:
+        commands:
+        # Builds Angular application. You can also build using custom environment here like mock or staging
+        - echo Build change this started on this  fg date `date`
+        - ng build  --${BUILD_ENV}
+post_build:
+        commands:
+        # Clear S3 bucket.
+        - aws s3 rm s3://${S3_BUCKET} --recursive
+        - echo S3 bucket is cleared.
+        # Copy dist folder to S3 bucket, As of Angular 6, builds are stored inside an app folder in distribution and not at the root of the dist folder
+        - aws s3 sync dist/${APP_NAME} s3://${S3_BUCKET} --delete
+        - aws s3 cp dist/${APP_NAME} s3://${S3_BUCKET} --recursive
+        - echo Build completed on `date`
+artifacts:
+    files:
+        - './**/*'
+    discard-paths: no
+    base-directory: 'dist/bloggit'
