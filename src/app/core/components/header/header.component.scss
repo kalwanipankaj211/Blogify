@@ -7,27 +7,19 @@
 
       }
 
-      .bloggtTextLogoImage {
-        display: none;
+      // .bloggtTextLogoImage {
+      //   display: none;
 
-      }
+      // }
 
       @media screen and (max-width:567px) {
         .bloggitLogoImage {
-          display: none;
+          width:100%;
+          height: 65px;
 
         }
-
-        .bloggtTextLogoImage {
-        //   display: block;
-        display: inline;
-          height: 79px;
-
-        }
-
       }
-    }
-
+  }
     .app-menu {
 
       .app-menu-content {
