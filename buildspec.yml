@@ -19,7 +19,8 @@ build:
         commands:
         # Builds Angular application. You can also build using custom environment here like mock or staging
         - echo Build change this started on this  fg date `date`
-        - ng build  
+        - ng build 
+        # - ng build  --${BUILD_ENV} 
         # - ng build 
 post_build:
         commands:
@@ -32,6 +33,6 @@ post_build:
         - echo Build completed on `date`
 artifacts:
     files:
-        - './**/*'
+        - '/'
     discard-paths: no
     base-directory: 'dist/blogify-app'
