@@ -3,7 +3,7 @@ version: 0.2
 env:
     variables:
         S3_BUCKET: "bloggit-s3-bucket"
-        APP_NAME: "blogify-app"
+        APP_NAME: "codepipeline-ap-south-1-681904092053"
         BUILD_ENV : "dev"
 
 phases:
@@ -33,6 +33,7 @@ post_build:
         - echo Build completed on `date`
 artifacts:
     files:
+        - buildspec.yml
         - './**/*'
     discard-paths: no
     base-directory: 'dist/blogify-app'
