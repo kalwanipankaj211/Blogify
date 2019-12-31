@@ -14,18 +14,18 @@ phases:
         - echo Installing source NPM dependencies...
         - npm install
         - npm install -g @angular/cli
-# pre_build:
-#     commands:
-#      - echo Build change this started on this  fg date `date`
-#      - ng build
-build:
+  pre_build:
+    commands:
+     - echo Build change this started on this  fg date `date`
+     - ng build
+  build:
         commands:
         # Builds Angular application. You can also build using custom environment here like mock or staging
         - echo Build change this started on this  fg date `date`
         - ng build  --${BUILD_ENV}
         # - ng build  --${BUILD_ENV}
         # - ng build
-post_build:
+  post_build:
         commands:
         # Clear S3 bucket.
         - aws s3 rm s3://${S3_BUCKET} --recursive
